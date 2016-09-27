@@ -1,0 +1,13 @@
+{
+    "json_url" : "http://awesome.url/with.json",
+    "api_key" : "awesome_api_key",
+    "committee" : "your committee",
+    "position" : "the position you are tracking",
+    "fa_icon" : {
+        "generator_url" : "http://url.for.generating/font-awesome/favicons?icon=",
+        "positive" : "thumbs-up",
+        "negative" : "thumbs-down"
+    },
+    "people_required" : 4,
+    "people" : [ "persons", "in", "the", "system" ]
+}

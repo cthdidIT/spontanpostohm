@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Har {{ config['committee'] }}s {{ config['position'].lower() }} postohmsits nu?</title>
+    <link rel='stylesheet' href="{{ url_for('static', filename='font-awesome/css/font-awesome.min.css')}}">
+    <style type="text/css">
+        html, body { height: 100%; }
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        h1 { font-size: 256px; }
+    </style>
+</head>
+<body>
+    <div class="center">
+        {% if status == 'positive' %}
+        <h1><i class='fa fa-{{ config['fa_icon']['positive'] }}'></i></h1>
+        {% else %}
+        <h1><i class='fa fa-{{ config['fa_icon']['negative'] }}'></i></h1>
+        {% endif %}
+    </div>
+</body>
+</html>
