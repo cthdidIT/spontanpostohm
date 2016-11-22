@@ -42,7 +42,6 @@ def favicon():
             out_file.write(data)
     return redirect(url_for('static', filename=static_path))
 
-@cache.cached(timeout=50)
 def status():
     members = set(get_members())
     people = set(get_people().keys())
@@ -50,7 +49,6 @@ def status():
     postohm_count = len(union)
     return 'positive' if (postohm_count >= config.people_required) else 'negative'
 
-@cache.cached(timeout=50)
 def get_members():
     lconf = config.ldap
     l.bind_s(lconf.bind_dn, lconf.bind_pw)
@@ -68,7 +66,6 @@ def get_members():
 def dec_and_split(unsplit):
     return [element.decode('utf-8').split(';') for element in unsplit]
 
-@cache.cached(timeout=50)
 def get_people():
     request = urllib.request.Request(config.api.url)
     request.add_header('Authorization', 'Token ' + config.api.key)
