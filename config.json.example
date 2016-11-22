@@ -1,13 +1,22 @@
 {
-    "json_url" : "http://awesome.url/with.json",
-    "api_key" : "awesome_api_key",
     "committee" : "your committee",
     "position" : "the position you are tracking",
+    "people_required" : 4,
+    "api" : {
+        "url" : "http://awesome.url/with.json",
+        "key" : "awesome_api_key"
+    },
+    "ldap" : {
+        "url" : "ldap://ldap.example.org",
+        "bind_dn" : "cn=admin,dc=example,dc=org",
+        "bind_pw" : "$3cr3+ p\/\/",
+        "search_dn" : "ou=fkit,ou=groups,dc=chalmers,dc=it",
+        "attr" : "position",
+        "filter" : "(objectclass=itGroup)"
+    },
     "fa_icon" : {
         "generator_url" : "http://url.for.generating/font-awesome/favicons?icon=",
         "positive" : "thumbs-up",
         "negative" : "thumbs-down"
-    },
-    "people_required" : 4,
-    "people" : [ "persons", "in", "the", "system" ]
+    }
 }

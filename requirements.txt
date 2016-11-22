@@ -1,2 +1,4 @@
-flask==0.11.1
-flask-cache==0.13.1
+dotmap==1.2.7
+Flask==0.11.1
+Flask_Cache==0.13.1
+pyldap==2.4.25.1
