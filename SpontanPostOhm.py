@@ -8,7 +8,6 @@ import json
 import urllib.request
 import sys
 import ldap
-import pprint
 
 app = Flask(__name__)
 cache = Cache(app,config={'CACHE_TYPE': 'simple'})
@@ -21,7 +20,6 @@ except FileNotFoundError:
 except Exception as e:
     raise e
 l = ldap.initialize(config.ldap.url, bytes_mode=False)
-count = 0
 
 @app.route('/')
 @cache.cached(timeout=50)
@@ -49,7 +47,6 @@ def status():
     members = set(get_members())
     people = set(get_people().keys())
     union = members.intersection(people)
-    print(union)
     postohm_count = len(union)
     return 'positive' if (postohm_count >= config.people_required) else 'negative'
 
